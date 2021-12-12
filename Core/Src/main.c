@@ -93,20 +93,23 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if (MODE_SELECTION == 0) {
+// 	  if (MODE_SELECTION == 0) {
+	  
 	  /* Toggle LEDs - Use the HAL functions from stm32l4xx_hal_gpio.c file */
 	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7); //LD1 (green) – PC7
 	  HAL_Delay(1000); //100ms // AMER: Updated this to 1000s to increase delay between each blink
-	  } else if (MODE_SELECTION == 1) {
-	  /* Turn OFF the LEDs - Use the HAL functions from stm32l4xx_hal_gpio.c file
-	  */
-	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET); //Turn off LD1 (green)
-	  HAL_Delay(100); //100ms
-	  } else if (MODE_SELECTION == 2) {
-	  /* Turn ON the LED - Use the HAL functions from stm32l4xx_hal_gpio.c file */
-	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);//LD1 (green) – PC7
-	  HAL_Delay(1000);//1secs
-	  }
+
+//	Othman- function not needed, only blinking
+// 	  } else if (MODE_SELECTION == 1) {
+// 	  /* Turn OFF the LEDs - Use the HAL functions from stm32l4xx_hal_gpio.c file
+// 	  */
+// 	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET); //Turn off LD1 (green)
+// 	  HAL_Delay(100); //100ms
+// 	  } else if (MODE_SELECTION == 2) {
+// 	  /* Turn ON the LED - Use the HAL functions from stm32l4xx_hal_gpio.c file */
+// 	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);//LD1 (green) – PC7
+// 	  HAL_Delay(1000);//1secs
+// 	  }
     /* USER CODE BEGIN 3 */
 
 
