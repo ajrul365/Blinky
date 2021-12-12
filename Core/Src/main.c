@@ -95,8 +95,8 @@ int main(void)
     /* USER CODE END WHILE */
 	  if (MODE_SELECTION == 0) {
 	  /* Toggle LEDs - Use the HAL functions from stm32l4xx_hal_gpio.c file */
-	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7); //LD1 (green) – PC7
-	  HAL_Delay(100); //100ms
+	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7); //LD1 (green) â€“ PC7
+	  HAL_Delay(1000); //100ms // AMER: Updated this to 1000s to increase delay between each blink
 	  } else if (MODE_SELECTION == 1) {
 	  /* Turn OFF the LEDs - Use the HAL functions from stm32l4xx_hal_gpio.c file
 	  */
@@ -104,7 +104,7 @@ int main(void)
 	  HAL_Delay(100); //100ms
 	  } else if (MODE_SELECTION == 2) {
 	  /* Turn ON the LED - Use the HAL functions from stm32l4xx_hal_gpio.c file */
-	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);//LD1 (green) – PC7
+	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);//LD1 (green) â€“ PC7
 	  HAL_Delay(1000);//1secs
 	  }
     /* USER CODE BEGIN 3 */
@@ -199,7 +199,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 /**
-* @brief EXTI line detection callback. The function will be call by EXTI15_10_IRQHandler in “stm32l4xx_it.c” .
+* @brief EXTI line detection callback. The function will be call by EXTI15_10_IRQHandler in â€œstm32l4xx_it.câ€ .
 * @param GPIO_Pin: Specifies the pins connected EXTI line
 * @retval None
 */
@@ -211,7 +211,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			if(MODE_SELECTION > 2) MODE_SELECTION=0;
 			/* Debounce - wait until the button is released . Read the GPIO to get the state. Refer to the schematics. */
 			/* - Use the HAL functions from stm32l4xx_hal_gpio.c file */
-			while(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) != GPIO_PIN_RESET);//Blue pushbutton – PC13
+			while(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13) != GPIO_PIN_RESET);//Blue pushbutton â€“ PC13
 }
 }
 /* USER CODE END 4 */
